@@ -3777,7 +3777,7 @@ void SpellMgr::LoadSpellCustomAttr()
             spellInfo->AuraInterruptFlags = AURA_INTERRUPT_FLAG_TAKE_DAMAGE;
             count++;
             break;
-        case 85673: // World of Glory
+        case 85673: // Word of Glory
         case 89023: // Blesse life (spell, not talent)
             spellInfo->Effect[1] = 0;
             count++;
