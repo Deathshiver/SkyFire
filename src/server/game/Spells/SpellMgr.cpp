@@ -3806,6 +3806,14 @@ void SpellMgr::LoadSpellCustomAttr()
             spellInfo->procChance = 20;
             count++;
             break;
+        case 75806: // Grand Crusader, Rank 1
+            spellInfo->procChance = 10;
+            count++;
+            break;
+        case 85043: // Grand Crusader, Rank 2
+            spellInfo->procChance = 20;
+            count++;
+            break;
         case 2643: // Multi-Shot no-target Effect 0 fix.
             spellInfo->EffectImplicitTargetA[0] = TARGET_DST_TARGET_ENEMY;
             count++;
