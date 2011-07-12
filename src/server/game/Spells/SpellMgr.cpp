@@ -4171,6 +4171,7 @@ void SpellMgr::LoadSpellCustomAttr()
             break;
         case 26573 : //Consecration
             spellInfo->EffectTriggerSpell[2] = 82366;
+            spellInfo->EffectTriggerSpell[2] = 69930;
             count++;
             break;
         case 64321: // Potent Pheromones
