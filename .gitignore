@@ -1,6 +1,7 @@
 bin/
 CMakeFiles/
 build/
+win/
 .directory
 .mailmap
 *.orig
