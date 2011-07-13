@@ -943,7 +943,7 @@ bool SpellMgr::_isPositiveEffect(uint32 spellId, uint32 effIndex, bool deep) con
                 case SPELL_AURA_MOD_CRIT_PCT:
                 case SPELL_AURA_MOD_SPELL_CRIT_CHANCE:
                     if (SpellMgr::CalculateSpellEffectAmount(spellproto, effIndex) > 0)
-                        return true;                        // some expected positive spells have SPELL_ATTR1_NEGATIVE
+                        return true;                        // some expected positive spells have SPELL_ATTR1_CANT_BE_REFLECTED
                     break;
                 case SPELL_AURA_ADD_TARGET_TRIGGER:
                     return true;
@@ -1055,10 +1055,6 @@ bool SpellMgr::_isPositiveEffect(uint32 spellId, uint32 effIndex, bool deep) con
 
     // non-positive targets
     if (!IsPositiveTarget(spellproto->EffectImplicitTargetA[effIndex],spellproto->EffectImplicitTargetB[effIndex]))
-        return false;
-
-    // AttributesEx check
-    if (spellproto->AttributesEx & SPELL_ATTR1_NEGATIVE)
         return false;
 
     if (!deep && spellproto->EffectTriggerSpell[effIndex]
@@ -3985,7 +3981,7 @@ void SpellMgr::LoadSpellCustomAttr()
             break;
         case 64844: // Divine Hymn 
         case 64904: // Hymn of Hope
-            spellInfo->AttributesEx &= ~SPELL_ATTR1_NEGATIVE;
+            spellInfo->AttributesEx &= ~SPELL_ATTR1_CANT_BE_REFLECTED;
             count++;
             break;
         case 44978: case 45001: case 45002:     // Wild Magic
