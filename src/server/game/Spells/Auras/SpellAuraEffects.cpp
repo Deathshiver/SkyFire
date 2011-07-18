@@ -1746,7 +1746,7 @@ void AuraEffect::PeriodicTick(AuraApplication * aurApp, Unit * caster) const
                     damage += addition;
             }
 
-            if (m_spellProto->Id == 774)
+            if (m_spellProto->Id == 774) // Rejuvenation
             {
                 float bonus = 1.0f;
                 if (caster->HasAura(78784)) // Blessing of the Grove rank 1
@@ -1759,6 +1759,80 @@ void AuraEffect::PeriodicTick(AuraApplication * aurApp, Unit * caster) const
                     bonus += 0.1f;
                 if (caster->HasAura(17113)) // Improved Rejuvenation rank 3
                     bonus += 0.15f;
+                if (caster->HasAura(57810)) // Genesis rank 1
+                    bonus += 0.02f;
+                if (caster->HasAura(57811)) // Genesis rank 2
+                    bonus += 0.04f;
+                if (caster->HasAura(57812)) // Genesis rank 3
+                    bonus += 0.06f;
+                if (caster->HasAura(87305)) // Gift of Nature
+                    bonus += 0.25f;
+                damage = int32 (damage * bonus);
+            }
+
+            if (m_spellProto->Id == 33763) // Lifebloom
+            {
+                float bonus = 1.0f;
+                if(caster->HasAura(57810)) // Genesis rank 1
+                    bonus += 0.02f;
+                if(caster->HasAura(57811)) // Genesis rank 2
+                    bonus += 0.04f;
+                if(caster->HasAura(57812)) // Genesis rank 3
+                    bonus += 0.06f;
+                if(caster->HasAura(51179)) // Gift of the Earthmother rank 1
+                    bonus += 0.05f;
+                if(caster->HasAura(51180)) // Gift of the Earthmother rank 2
+                    bonus += 0.1f;
+                if(caster->HasAura(51181)) // Gift of the Earthmother rank 3
+                    bonus += 0.15f;
+                if(caster->HasAura(87305)) // Gift of Nature
+                    bonus += 0.25f;
+                damage = int32 (damage * bonus);
+            }
+
+            if (m_spellProto->Id == 8936) // Regrowth
+            {
+                float bonus = 1.0f;
+                if(caster->HasAura(57810)) // Genesis rank 1
+                    bonus += 0.02f;
+                if(caster->HasAura(57811)) // Genesis rank 2
+                    bonus += 0.04f;
+                if(caster->HasAura(57812)) // Genesis rank 3
+                    bonus += 0.06f;
+                if(caster->HasAura(87305)) // Gift of Nature
+                    bonus += 0.25f;
+                damage = int32 (damage * bonus);
+            }
+
+            if (m_spellProto->Id == 48438) // Wild Growth
+            {
+                float bonus = 1.0f;
+                if(caster->HasAura(57810)) // Genesis rank 1
+                    bonus += 0.02f;
+                if(caster->HasAura(57811)) // Genesis rank 2
+                    bonus += 0.04f;
+                if(caster->HasAura(57812)) // Genesis rank 3
+                    bonus += 0.06f;
+                if(caster->HasAura(87305)) // Gift of Nature
+                    bonus += 0.25f;
+                damage = int32 (damage * bonus);
+            }
+
+            if (m_spellProto->Id == 139) // Renew
+            {
+                float bonus = 1.0f;
+                if (caster->HasAura(47586)) // Twin Disciplines rank 1
+                    bonus += 0.02f;
+                if (caster->HasAura(47587)) // Twin Disciplines rank 2
+                    bonus += 0.04f;
+                if (caster->HasAura(47588)) // Twin Discipliens rank 3
+                    bonus += 0.06f;
+                if (caster->HasAura(87336)) // Spiritual Healing
+                    bonus += 0.15f;
+                if (caster->HasAura(14908)) // Improved Renew rank 1
+                    bonus += 0.05f;
+                if (caster->HasAura(15020)) // Improved Renew rank 2
+                    bonus += 0.10f;
                 damage = int32 (damage * bonus);
             }
 
