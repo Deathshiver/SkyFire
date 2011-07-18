@@ -24,12 +24,16 @@
 #include "ScriptPCH.h"
 #include "ScriptLoader.h"
 
-//examples
+// examples
 void AddSC_example_creature();
 void AddSC_example_escort();
 void AddSC_example_gossip_codebox();
 void AddSC_example_misc();
-//player scripts
+
+// custom scripts
+void AddSC_PVP_System();
+
+// player scripts
 void AddSC_player_mage_scripts();
 void AddSC_example_commandscript();
 
@@ -1249,6 +1253,6 @@ void AddCustomScripts()
 {
 #ifdef SCRIPTS
     /* This is where custom scripts should be added. */
-
+    AddSC_PVP_System();
 #endif
 }
