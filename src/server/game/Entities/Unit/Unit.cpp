@@ -6936,6 +6936,15 @@ bool Unit::HandleDummyAuraProc(Unit *pVictim, uint32 damage, AuraEffect* trigger
                     target = pVictim;
                     break;
                 }
+                // Grand Crusader
+                case 85416:
+                {
+                    if (!pVictim || !pVictim->isAlive())
+                        return false;
+
+                    pVictim->ToPlayer()->RemoveSpellCooldown(31935, true);
+                    break;
+                }
             }
             break;
         }

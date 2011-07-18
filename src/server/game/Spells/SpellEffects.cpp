@@ -1761,6 +1761,11 @@ void Spell::EffectDummy(SpellEffIndex effIndex)
                     // now let next effect cast spell at each target.
                     return;
                 }
+                case 31935: // Avenger's Shield
+                {
+                    if (m_caster->HasAura(85416))
+                        m_caster->CastSpell(m_caster, 98057, true);
+                }
             }
             break;
         }
