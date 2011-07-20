@@ -96,7 +96,7 @@ class System_OnPvPKill : public PlayerScript
                     {
                         if (KillingStreak[vGUID].LastKillStreak >= 20) // 20+
                         {
-                            sprintf(msg2, "%s's |cffff6600GODLIKE|r (%d) streak was ended by %s!", KillingStreak[vGUID].ColoredName, KillingStreak[vGUID].LastKillStreak, KillingStreak[kGUID].ColoredName);
+                            sprintf(msg2, "%s's |cffff0000GODLIKE|r (%d) streak was ended by %s!", KillingStreak[vGUID].ColoredName, KillingStreak[vGUID].LastKillStreak, KillingStreak[kGUID].ColoredName);
                             sWorld->SendWorldText(LANG_PVP_SYSTEMMESSAGE, msg2);
                         }
                         else // 15-20
